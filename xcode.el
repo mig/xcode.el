@@ -23,7 +23,7 @@
           (t (dir-of-found-walking-up-fs pattern (parent-dir current-directory))))))
 
 (defun xcode-project-dir ()
-  (dir-with-file-found-walking-up-fs "xcodeproj"))
+  (dir-of-file-found-walking-up-fs "xcodeproj"))
 
 (defun xcode-project-debug-dir ()
   (expand-file-name (concat (xcode-project-dir) "/build/Debug/")))
