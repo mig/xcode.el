@@ -47,3 +47,5 @@ Notes
 
 At the moment I've only tested this library in the development version of Cocoa Emacs (24)
 
+Additionally, there is no build failure checking as of now.
+
