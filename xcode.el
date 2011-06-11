@@ -20,7 +20,7 @@
     (when (null current-directory) (setq current-directory (buffer-dir)))
     (cond ((file-for-pattern-in-dir pattern current-directory) (expand-file-name current-directory))
           ((home-dir-p current-directory) nil)
-          (t (dir-of-found-walking-up-fs pattern (parent-dir current-directory))))))
+          (t (dir-of-file-found-walking-up-fs pattern (parent-dir current-directory))))))
 
 (defun xcode-project-dir ()
   (dir-of-file-found-walking-up-fs "xcodeproj"))
