@@ -17,7 +17,7 @@ If you are using [el-get](https://github.com/dimitri/el-get), use the following 
        :url "https://github.com/mig/xcode.el.git"
        :load "xcode.el")
 
-Traditional way:
+Or, the standard way:
 
     $ cd ~/.emacs.d/anywhere-you-want
     $ git clone git://github.com/mig/xcode.el
