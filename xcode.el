@@ -34,9 +34,20 @@
   "Returns the root directory of the xcode project whose file is loaded in the current buffer"
   (dir-of-file-found-walking-up-fs "xcodeproj"))
 
+(defun xcode-project ()
+  "Returns the name of the xcodeproj directory"
+  (file-for-pattern-in-dir "xcodeproj" (xcode-project-dir)))
+
 (defun xcode-project-debug-dir ()
-  "Returns the debug build directory of the xcode project at xcode-project-dirs location"
+  "Returns the debug build directory of the xcode project"
   (expand-file-name (concat (xcode-project-dir) "/build/Debug/")))
+
+(defun xcode-open-project-in-xcode ()
+  "Opens the xcode project in Xcode.app"
+  (interactive)
+  (let (working-dir)
+    (setq working-dir (xcode-project-dir))
+    (cat-run (list "cd" working-dir "&&" "open" (xcode-project)))))
 
 (defun xcode-compile ()
   "Builds the xcode project whose file is loaded in the current buffer"
